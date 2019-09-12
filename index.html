@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Flocking Algorithm</title>
+    <meta charset ="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  </head>
+  <body>
+
+    <div class="tablecontainer" id="tablecont">
+      <!--<div class=titlebar>Settings</div>-->
+
+      <div class=sliderbody>
+        <div class="slidecontainer">
+
+          <div class="head">Speed</div>
+          <div class="optioncontainer">
+            <div class="optcont">
+              <div class="head2">max</div>
+              <input type="range" min="1" max="20" value="7.5" class="slider" step="0.1" id="myRange" onmousemove="rangevalue.value=value; maxspeed=value" onchange="rangevalue.value=value; maxspeed=value" >
+            </div>
+            <output class="barval" id=rangevalue>7.5</output>
+            <div class="optcont">
+              <div class="head2">min</div>
+              <input type="range" min="1" max="20" value="7.5" class="slider" step="0.1" id="myRange" onmousemove="rangevalue2.value=value; minspeed=value" onchange="rangevalue2.value=value; minspeed=value" >
+            </div>
+            <output class="barval" id=rangevalue2>7.5</output>
+          </div>
+
+          <div class="head">Alignment</div>
+          <div class="optioncontainer">
+            <div class="optcont">
+              <div class="head2">radius</div>
+              <input type="range" min="0" max="500" value="70" class="slider" step="1" id="myRange" onmousemove="rangevalue5.value=value; alignmentRadius=value" onchange="rangevalue5.value=value; alignmentRadius=value" >
+            </div>
+            <output class="barval" id=rangevalue5>70</output>
+            <div class="optcont">
+              <div class="head2">strength</div>
+              <input type="range" min="0" max="5" value="0.25" class="slider" step="0.01" id="myRange" onmousemove="rangevalue6.value=value; alignmentStrength=value" onchange="rangevalue6.value=value; alignmentStrength=value" >
+            </div>
+            <output class="barval" id=rangevalue6>0.25</output>
+          </div>
+
+
+          <div class="head">Repulsion</div>
+          <div class="optioncontainer">
+            <div class="optcont">
+              <div class="head2">radius</div>
+              <input type="range" min="0" max="500" value="70" class="slider" step="1" id="myRange" onmousemove="rangevalue7.value=value; seperationRadius=value" onchange="rangevalue7.value=value; seperationRadius=value" >
+            </div>
+            <output class="barval" id=rangevalue7>70</output>
+            <div class="optcont">
+              <div class="head2">strength</div>
+              <input type="range" min="0" max="5" value="0.25" class="slider" step="0.01" id="myRange" onmousemove="rangevalue8.value=value; seperationStrength=value" onchange="rangevalue8.value=value; seperationStrength=value" >
+            </div>
+            <output class="barval" id=rangevalue8>0.25</output>
+          </div>
+
+          <div class="head">Cohesion</div>
+          <div class="optioncontainer">
+            <div class="optcont">
+              <div class="head2">radius</div>
+              <input type="range" min="0" max="500" value="70" class="slider" step="1" id="myRange" onmousemove="rangevalue3.value=value; cohesionRadius=value" onchange="rangevalue3.value=value; cohesionRadius=value" >
+            </div>
+            <output class="barval" id=rangevalue3>70</output>
+            <div class="optcont">
+              <div class="head2">strength</div>
+              <input type="range" min="0" max="5" value="0.4" class="slider" step="0.01" id="myRange" onmousemove="rangevalue4.value=value; cohesionStrength=value" onchange="rangevalue4.value=value; cohesionStrength=value" >
+            </div>
+            <output class="barval" id=rangevalue4>0.4</output>
+          </div>
+
+
+        </div>
+
+        </div>
+
+
+    </div>
+
+    <div class="overlay">
+      <canvas id="drawCanvas" onmousedown="setmousedown(event)" onmouseup="setmouseup(event)" onmousemove="setcoords(event)"></canvas>
+    </div>
+  </body>
+  <script type="text/javascript" src="js/vectors.js"></script>
+  <script type="text/javascript" src="js/color.js"></script>
+  <script type="text/javascript" src="js/boids.js"></script>
+  <script type="text/javascript" src="js/quadwindow.js"></script>
+  <script type="text/javascript" src="js/quadtree.js"></script>
+  <script type="text/javascript" src="js/octotree.js"></script>
+  <script type="text/javascript" src="js/main.js"></script>
+</html>
